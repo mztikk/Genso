@@ -1,4 +1,5 @@
-﻿using Genso.Code.CodeRepresentation;
+﻿using System.Collections.Immutable;
+using Genso.Code.CodeRepresentation;
 
 namespace Genso.Code.CSharp.CodeRepresentation
 {
@@ -9,7 +10,7 @@ namespace Genso.Code.CSharp.CodeRepresentation
     /// <param name="Name">Name of the class</param>
 #pragma warning disable CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-    public record CSharpClass(string Name, string? @namespace, bool @static, bool partial) : Class(Name);
+    public record CSharpClass(string Name, string? Namespace, ImmutableArray<string> Usings, bool @static, bool partial) : Class(Name);
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 #pragma warning restore CS1572 // XML comment has a param tag, but there is no parameter by that name
 #pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
