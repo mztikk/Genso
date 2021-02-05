@@ -19,12 +19,6 @@ namespace Genso.Generator
         /// <param name="writer"><see cref="IndentedStreamWriter"/> used to write to</param>
         protected BaseGenerator(IndentedStreamWriter writer) => _writer = writer;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BaseGenerator"/> class for the specified <see cref="Stream"/>
-        /// </summary>
-        /// <param name="stream"><see cref="Stream"/> to write to</param>
-        protected BaseGenerator(Stream stream) : this(new IndentedStreamWriter(stream)) { }
-
         /// <inheritdoc/>
         public abstract bool Begin();
         /// <inheritdoc/>
