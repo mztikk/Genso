@@ -3,28 +3,21 @@ using Genso.Code.CSharp.CodeRepresentation;
 using Genso.Generator;
 using Genso.IO;
 
-namespace Genso.Code.CSharp.Generator
+namespace Genso.Code.CSharp.Generator.Class
 {
     /// <summary>
-    /// Class to generate a C# Class
+    /// Class to generate a C# Class definition
     /// </summary>
-    public class ClassGenerator : BaseGenerator
+    public class ClassDefinitionGenerator : BaseGenerator
     {
         private readonly CSharpClass _class;
-        private readonly UsingGenerator _usingGenerator;
-        private readonly NamespaceGenerator _namespaceGenerator;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ClassGenerator"/> class for the specified <see cref="IndentedStreamWriter"/>
+        /// Initializes a new instance of the <see cref="ClassDefinitionGenerator"/> class for the specified <see cref="IndentedStreamWriter"/>
         /// </summary>
         /// <param name="class"><see cref="CSharpClass"/> to generate</param>
         /// <param name="writer"><see cref="IndentedStreamWriter"/> used to write to</param>
-        public ClassGenerator(CSharpClass @class, IndentedStreamWriter writer) : base(writer)
-        {
-            _class = @class;
-            _usingGenerator = new UsingGenerator(_class.Usings, writer);
-            _namespaceGenerator = new NamespaceGenerator(_class.Namespace, writer);
-        }
+        public ClassDefinitionGenerator(CSharpClass @class, IndentedStreamWriter writer) : base(writer) => _class = @class;
 
         /// <summary>
         /// Begins writing the class. Usings, opening namespace, class definition
@@ -32,13 +25,6 @@ namespace Genso.Code.CSharp.Generator
         /// <returns>Always <see langword="true"/></returns>
         public override bool Begin()
         {
-            if (_usingGenerator.Make())
-            {
-                WriteLine();
-            }
-
-            _namespaceGenerator.Begin();
-
             var classDescription = new List<string>();
             if (_class.Accessibility.HasValue)
             {
@@ -56,24 +42,15 @@ namespace Genso.Code.CSharp.Generator
             classDescription.Add("class");
             classDescription.Add(_class.Name);
 
-            WriteLine(string.Join(" ", classDescription));
-            OpenBrackets();
+            Write(string.Join(" ", classDescription));
 
             return true;
         }
 
         /// <summary>
-        /// Finishes writing the class and namespace
+        /// Does not write anything
         /// </summary>
-        /// <returns>Always <see langword="true"/></returns>
-        public override bool End()
-        {
-            // Close brackets for class
-            CloseBrackets();
-
-            _namespaceGenerator.End();
-
-            return true;
-        }
+        /// <returns>Always <see langword="false"/></returns>
+        public override bool End() => false;
     }
 }
