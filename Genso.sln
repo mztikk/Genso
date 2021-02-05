@@ -10,9 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genso.Code", "Genso.Code/Genso.Code\Genso.Code.csproj", "{A0921157-2AE8-4972-8E23-A5FA5440CEC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Genso.Code", "Genso.Code\Genso.Code\Genso.Code.csproj", "{A0921157-2AE8-4972-8E23-A5FA5440CEC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genso.Code.CSharp", "Genso.Code/Genso.Code.CSharp/Genso.Code.CSharp\Genso.Code.CSharp.csproj", "{80E3CD63-E04A-47E9-B6C9-2BC01C170CCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Genso.Code.CSharp", "Genso.Code\Genso.Code.CSharp\Genso.Code.CSharp\Genso.Code.CSharp.csproj", "{80E3CD63-E04A-47E9-B6C9-2BC01C170CCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genso.Tests", "Genso.Tests\Genso.Tests.csproj", "{D8798044-F761-4EEE-9C29-DD73FB8D468C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genso.Code.CSharp.Tests", "Genso.Code\Genso.Code.CSharp\Genso.Code.CSharp.Tests\Genso.Code.CSharp.Tests.csproj", "{BB84D182-C052-4FC5-900F-55D50369DEA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +36,14 @@ Global
 		{80E3CD63-E04A-47E9-B6C9-2BC01C170CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80E3CD63-E04A-47E9-B6C9-2BC01C170CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80E3CD63-E04A-47E9-B6C9-2BC01C170CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8798044-F761-4EEE-9C29-DD73FB8D468C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8798044-F761-4EEE-9C29-DD73FB8D468C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8798044-F761-4EEE-9C29-DD73FB8D468C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8798044-F761-4EEE-9C29-DD73FB8D468C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB84D182-C052-4FC5-900F-55D50369DEA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB84D182-C052-4FC5-900F-55D50369DEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB84D182-C052-4FC5-900F-55D50369DEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB84D182-C052-4FC5-900F-55D50369DEA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
