@@ -15,12 +15,12 @@ namespace Genso.Code.CSharp.Generator.Class
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassDefinitionGenerator"/> class for the specified <see cref="IndentedStreamWriter"/>
         /// </summary>
-        /// <param name="class"><see cref="CSharpClass"/> to generate</param>
+        /// <param name="class"><see cref="CSharpClass"/> to generate definition for</param>
         /// <param name="writer"><see cref="IndentedStreamWriter"/> used to write to</param>
         public ClassDefinitionGenerator(CSharpClass @class, IndentedStreamWriter writer) : base(writer) => _class = @class;
 
         /// <summary>
-        /// Begins writing the class. Usings, opening namespace, class definition
+        /// Writes the class definition
         /// </summary>
         /// <returns>Always <see langword="true"/></returns>
         public override bool Begin()
