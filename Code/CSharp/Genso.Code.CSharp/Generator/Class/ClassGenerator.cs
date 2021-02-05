@@ -44,6 +44,18 @@ namespace Genso.Code.CSharp.Generator.Class
 
             OpenBrackets();
 
+            foreach (CSharpField field in _class.Fields)
+            {
+                var fieldGenerator = new FieldGenerator(field, _writer);
+                fieldGenerator.Make();
+            }
+
+            // empty newline after fields
+            if (_class.Fields.Length > 0)
+            {
+                WriteLine();
+            }
+
             return true;
         }
 

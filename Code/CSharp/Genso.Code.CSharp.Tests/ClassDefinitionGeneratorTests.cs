@@ -49,11 +49,11 @@ namespace Genso.Code.CSharp.Tests
 
         private static string ClassDefinition(Func<CSharpClass> classFactory) => GetString((indentedWriter) => new ClassDefinitionGenerator(classFactory(), indentedWriter).Make());
 
-        private static CSharpClass GetStaticClass() => new CSharpClass("StaticClass", "Genso", Accessibility.Public, Array.Empty<string>().ToImmutableArray(), true, false);
-        private static CSharpClass GetPartialClass() => new CSharpClass("StaticClass", "Genso", Accessibility.Public, Array.Empty<string>().ToImmutableArray(), true, true);
-        private static CSharpClass GetPublicClass() => new CSharpClass("StaticClass", "Genso", Accessibility.Public, Array.Empty<string>().ToImmutableArray(), true, true);
-        private static CSharpClass GetPublicStaticClass() => new CSharpClass("StaticClass", "Genso", Accessibility.Public, Array.Empty<string>().ToImmutableArray(), true, true);
-        private static Func<CSharpClass> GetAccessibilityFactory(Accessibility accessibility) => () => new CSharpClass("StaticClass", "Genso", accessibility, Array.Empty<string>().ToImmutableArray(), true, true);
-        private static Func<CSharpClass> GetNameFactory(string name) => () => new CSharpClass(name, "Genso", Accessibility.Public, Array.Empty<string>().ToImmutableArray(), true, true);
+        private static CSharpClass GetStaticClass() => new CSharpClass("StaticClass", "Genso", Accessibility.Public, Array.Empty<string>().ToImmutableArray(), true, false, Array.Empty<CSharpField>().ToImmutableArray());
+        private static CSharpClass GetPartialClass() => new CSharpClass("StaticClass", "Genso", Accessibility.Public, Array.Empty<string>().ToImmutableArray(), true, true, Array.Empty<CSharpField>().ToImmutableArray());
+        private static CSharpClass GetPublicClass() => new CSharpClass("StaticClass", "Genso", Accessibility.Public, Array.Empty<string>().ToImmutableArray(), true, true, Array.Empty<CSharpField>().ToImmutableArray());
+        private static CSharpClass GetPublicStaticClass() => new CSharpClass("StaticClass", "Genso", Accessibility.Public, Array.Empty<string>().ToImmutableArray(), true, true, Array.Empty<CSharpField>().ToImmutableArray());
+        private static Func<CSharpClass> GetAccessibilityFactory(Accessibility accessibility) => () => new CSharpClass("StaticClass", "Genso", accessibility, Array.Empty<string>().ToImmutableArray(), true, true, Array.Empty<CSharpField>().ToImmutableArray());
+        private static Func<CSharpClass> GetNameFactory(string name) => () => new CSharpClass(name, "Genso", Accessibility.Public, Array.Empty<string>().ToImmutableArray(), true, true, Array.Empty<CSharpField>().ToImmutableArray());
     }
 }
