@@ -14,6 +14,12 @@ namespace Genso.Code.CSharp.Tests
 
         [DataTestMethod]
         [DataRow("test")]
+        [DataRow("System")]
+        [DataRow("System.Text.RegularExpressions")]
+        [DataRow("Genso.Code.CSharp.Generator")]
+        [DataRow("Genso.Tests")]
+        [DataRow("Microsoft.VisualStudio.TestTools.UnitTesting")]
+        [DataRow("äöüßá´à`")]
         public void NamespaceNameTest(string name)
         {
             Contains(() => name, name);

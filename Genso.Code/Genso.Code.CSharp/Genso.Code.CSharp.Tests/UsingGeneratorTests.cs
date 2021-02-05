@@ -23,6 +23,7 @@ namespace Genso.Code.CSharp.Tests
         [DataRow("Genso.Code.CSharp.Generator")]
         [DataRow("Genso.Tests")]
         [DataRow("Microsoft.VisualStudio.TestTools.UnitTesting")]
+        [DataRow("äöüßá´à`")]
         public void UsingStructureWithName(params string[] usings)
         {
             var usingsArray = usings.ToImmutableArray();
