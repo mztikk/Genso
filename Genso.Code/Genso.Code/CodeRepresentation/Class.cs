@@ -1,4 +1,4 @@
-﻿namespace Genso.CodeRepresentation
+﻿namespace Genso.Code.CodeRepresentation
 {
 #pragma warning disable CS1572 // XML comment has a param tag, but there is no parameter by that name
     /// <summary>
