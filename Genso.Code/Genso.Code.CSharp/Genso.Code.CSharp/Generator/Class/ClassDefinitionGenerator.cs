@@ -25,26 +25,28 @@ namespace Genso.Code.CSharp.Generator.Class
         /// <returns>Always <see langword="true"/></returns>
         public override bool Begin()
         {
-            var classDescription = new List<string>();
+            Write(string.Join(" ", GetClassDefinition()));
+
+            return true;
+        }
+
+        private IEnumerable<string> GetClassDefinition()
+        {
             if (_class.Accessibility.HasValue)
             {
-                classDescription.Add(_class.Accessibility.Value.ToGeneratorString());
+                yield return _class.Accessibility.Value.ToGeneratorString();
             }
             if (_class.Static)
             {
-                classDescription.Add("static");
+                yield return "static";
             }
             if (_class.Partial)
             {
-                classDescription.Add("partial");
+                yield return "partial";
             }
 
-            classDescription.Add("class");
-            classDescription.Add(_class.Name);
-
-            Write(string.Join(" ", classDescription));
-
-            return true;
+            yield return "class";
+            yield return _class.Name;
         }
 
         /// <summary>
