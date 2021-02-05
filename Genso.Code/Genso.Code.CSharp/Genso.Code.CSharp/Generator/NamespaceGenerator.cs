@@ -1,5 +1,4 @@
-﻿using System.IO;
-using Genso.Generator;
+﻿using Genso.Generator;
 using Genso.IO;
 
 namespace Genso.Code.CSharp.Generator
@@ -16,14 +15,7 @@ namespace Genso.Code.CSharp.Generator
         /// </summary>
         /// <param name="namespace">namespace to generate</param>
         /// <param name="writer"><see cref="IndentedStreamWriter"/> used to write to</param>
-        protected NamespaceGenerator(string? @namespace, IndentedStreamWriter writer) : base(writer) => _namespace = @namespace;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NamespaceGenerator"/> class for the specified <see cref="Stream"/>
-        /// </summary>
-        /// <param name="namespace">namespace to generate</param>
-        /// <param name="stream"><see cref="Stream"/> to write to</param>
-        protected NamespaceGenerator(string? @namespace, Stream stream) : base(stream) => _namespace = @namespace;
+        public NamespaceGenerator(string? @namespace, IndentedStreamWriter writer) : base(writer) => _namespace = @namespace;
 
         /// <summary>
         /// Begins writing the namespace
