@@ -1,5 +1,4 @@
-﻿using System.IO;
-using Genso.IO;
+﻿using Genso.IO;
 
 namespace Genso.Generator
 {
